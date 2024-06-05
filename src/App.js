@@ -1,7 +1,6 @@
 import React from 'react';
-import ChipAutoComplete from './chipAutoComplete'; // Update the filename to match the actual filename on disk
-
-import './App.css'; // Import your CSS file here
+import ChipAutoComplete from './chipAutoComplete'; // Import the ChipAutoComplete component
+import './App.css'; // Import the CSS file for styling
 
 function App() {
   return (
@@ -9,7 +8,7 @@ function App() {
       {/* Top Footer */}
       <div className="footer top-footer">Chip based autocomplete</div>
 
-      {/* Your main content (e.g., ChipAutoComplete component) */}
+      {/* Main content: ChipAutoComplete component */}
       <ChipAutoComplete />
 
       {/* Bottom Footer */}
@@ -18,4 +17,4 @@ function App() {
   );
 }
 
-export default App;
+export default App; // Export the App component as the default export
