@@ -1,8 +1,8 @@
-# Chip Based Autocomplete
+# 🔰 Chip Based Autocomplete
 
 This project is a React application that features a chip-based autocomplete input field. Users can enter tags, select suggestions, and see them displayed as chips. 
 
-## Features
+## 🌟 Features
 
 - **Autocomplete Suggestions:** As the user types, suggestions are filtered and displayed.
 - **Chip Display:** Selected tags are displayed as chips.
@@ -55,8 +55,22 @@ chip-autocomplete/
 
 └── screenshot.png
 
+## ⚙️ Tech Stack
 
-## Installation
+**Frontend:**
+
+- React.js
+  
+- Tailwind CSS
+
+- React Hooks
+
+- npm / yarn (for package management)
+
+- Create React App (for project setup and build tool)
+
+
+## 🛠️ Installation
 
 1. **Clone the repository:**
     ```bash
@@ -93,10 +107,10 @@ This file contains the main functionality of the chip-based autocomplete feature
 
 This file contains the CSS styles for the **ChipAutoComplete** component, including styles for the container, chips, input field, suggestions, and the progress cursor.
 
-## Contribution
+## 🤝 Contribution
 
 Contributions are welcome! Please fork this repository and submit a pull request for any features, bug fixes, or enhancements.
 
-## License
+## 📄 License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License. [MIT](https://choosealicense.com/licenses/mit/)
