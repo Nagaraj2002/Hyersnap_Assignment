@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import ChipAutoComplete from './chipAutoComplete'; // Update the filename to match the actual filename on disk
+
+import './App.css'; // Import your CSS file here
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* Top Footer */}
+      <div className="footer top-footer">Chip based autocomplete</div>
+
+      {/* Your main content (e.g., ChipAutoComplete component) */}
+      <ChipAutoComplete />
+
+      {/* Bottom Footer */}
+      <div className="footer bottom-footer">Internship Assignment (HyreSnap)</div>
     </div>
   );
 }

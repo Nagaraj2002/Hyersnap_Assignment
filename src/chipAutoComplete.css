@@ -1,0 +1,114 @@
+.chip-autocomplete {
+    width: 100%;
+    max-width: 500px;
+    margin:  auto;
+    margin-top: 80px;
+    position: relative;
+  }
+  
+  .chips-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: relative;
+  }
+  
+  .input-tags {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #888;
+  }
+  
+  .chip {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    background-color: #e0e0e0;
+    border-radius: 15px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .chip-remove {
+    margin-left: 5px;
+    color: #ff0000;
+    cursor: pointer;
+  }
+  
+  .input-field {
+    flex: 1;
+    min-width: 150px;
+    padding: 10px;
+    border: none;
+    outline: none;
+  }
+  
+  .suggestions {
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-height: 150px;
+    overflow-y: auto;
+  }
+  
+  .suggestion {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .suggestion:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .highlight {
+    color: blue;
+    font-weight: bold;
+  }
+  
+  .progress-cursor {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    border: 5px solid black;
+    border-radius: 50%;
+    animation: rotate 1s infinite linear;
+  }
+  
+  .progress-cursor::before,
+  .progress-cursor::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    border: 5px solid transparent;
+    border-radius: 50%;
+  }
+  
+  .progress-cursor::before {
+    border-top-color: black;
+    border-right-color: black;
+    animation: rotate 1s infinite linear reverse;
+  }
+  
+  .progress-cursor::after {
+    border-bottom-color: gray;
+    border-left-color: gray;
+    animation: rotate 1s infinite linear;
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
