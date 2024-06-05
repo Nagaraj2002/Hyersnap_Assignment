@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './chipAutoComplete.css';
 
+// Sample data for suggestions
 const suggestionsData = [
   'React', 'Hands On', 'Live Coding', 'Angular', 'Vue JS', 'JS Fundamentals',
   'Typescript', 'Browser/DOM', 'API', 'Router', 'Forms', 'Jest', 'Vue',
@@ -9,14 +10,18 @@ const suggestionsData = [
 ];
 
 const ChipAutoComplete = () => {
-  const [chips, setChips] = useState([]);
-  const [inputValue, setInputValue] = useState('');
-  const [suggestions, setSuggestions] = useState(suggestionsData);
-  const [isInputFocused, setIsInputFocused] = useState(false);
+  // State variables
+  const [chips, setChips] = useState([]); // to store the list of chips
+  const [inputValue, setInputValue] = useState(''); // to store the input value
+  const [suggestions, setSuggestions] = useState(suggestionsData); // to store the suggestions list
+  const [isInputFocused, setIsInputFocused] = useState(false); // to check if input field is focused
 
+  // Handle input change
   const handleInputChange = (e) => {
     const value = e.target.value;
     setInputValue(value);
+
+    // Filter suggestions based on input value and chips
     if (value) {
       setSuggestions(suggestionsData.filter((s) => s.toLowerCase().includes(value.toLowerCase()) && !chips.includes(s)));
     } else {
@@ -24,23 +29,26 @@ const ChipAutoComplete = () => {
     }
   };
 
+  // Handle key down event
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' && inputValue) {
       if (!chips.includes(inputValue)) {
-        setChips([...chips, inputValue]);
-        setInputValue('');
-        setSuggestions(suggestionsData.filter((s) => !chips.includes(s) && s !== inputValue));
+        setChips([...chips, inputValue]); // Add input value to chips
+        setInputValue(''); // Clear input value
+        setSuggestions(suggestionsData.filter((s) => !chips.includes(s) && s !== inputValue)); // Update suggestions
       }
     }
   };
 
+  // Handle chip removal
   const handleChipRemove = (chip) => {
-    setChips(chips.filter((c) => c !== chip));
-    setSuggestions([...suggestions, chip]);
+    setChips(chips.filter((c) => c !== chip)); // Remove chip from the list
+    setSuggestions([...suggestions, chip]); // Add the removed chip back to suggestions
   };
 
+  // Highlight text function
   const highlightText = (text, highlight) => {
-    const parts = text.split(new RegExp(`(${highlight})`, 'gi'));
+    const parts = text.split(new RegExp(`(${highlight})`, 'gi')); // Split text based on highlight
     return (
       <span>
         {parts.map((part, index) =>
@@ -57,9 +65,11 @@ const ChipAutoComplete = () => {
   return (
     <div className="chip-autocomplete">
       <div className="chips-container" onClick={() => setIsInputFocused(true)}>
+        {/* Show "Enter a tag" when no chips are present and input is not focused */}
         {chips.length === 0 && !isInputFocused && (
           <div className="input-tags">Enter a tag</div>
         )}
+        {/* Display chips */}
         {chips.map((chip) => (
           <div key={chip} className="chip">
             <span>{chip}</span>
@@ -71,6 +81,7 @@ const ChipAutoComplete = () => {
             </button>
           </div>
         ))}
+        {/* Input field for adding chips */}
         <input
           type="text"
           value={inputValue}
@@ -81,8 +92,10 @@ const ChipAutoComplete = () => {
           placeholder=""
           className="input-field"
         />
+        {/* Show progress cursor when input is focused and value is present */}
         {inputValue && <div className="progress-cursor"></div>}
       </div>
+      {/* Display suggestions */}
       {inputValue && (
         <div className="suggestions">
           {suggestions.map((suggestion) => (
@@ -90,12 +103,12 @@ const ChipAutoComplete = () => {
               key={suggestion}
               className="suggestion"
               onClick={() => {
-                setChips([...chips, suggestion]);
-                setInputValue('');
-                setSuggestions(suggestionsData.filter((s) => !chips.includes(s) && s !== suggestion));
+                setChips([...chips, suggestion]); // Add suggestion to chips
+                setInputValue(''); // Clear input value
+                setSuggestions(suggestionsData.filter((s) => !chips.includes(s) && s !== suggestion)); // Update suggestions
               }}
             >
-              {highlightText(suggestion, inputValue)}
+              {highlightText(suggestion, inputValue)} {/* Highlight matching text */}
             </div>
           ))}
         </div>
