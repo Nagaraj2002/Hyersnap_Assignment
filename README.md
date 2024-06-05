@@ -14,7 +14,7 @@ This project is a React application that features a chip-based autocomplete inpu
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/your-repo/chip-autocomplete.git
+    git clone https://github.com/Nagaraj2002/Hyersnap_Assignment
     cd chip-autocomplete
     ```
 
