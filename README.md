@@ -8,14 +8,13 @@ This project is a React application that features a chip-based autocomplete inpu
 - **Chip Display:** Selected tags are displayed as chips.
 - **Dynamic Highlighting:** Matching parts of the suggestions are highlighted.
 - **Progress Cursor:** A rotating progress cursor appears while the user is typing.
-- **Input Placeholder:** A placeholder text "INPUT TAGS" is displayed when no chips are selected.
+- **Input Placeholder:** A placeholder text "Enter a tag" is displayed when no chips are selected.
 
 ## Installation
 
 1. **Clone the repository:**
     ```bash
     git clone https://github.com/Nagaraj2002/Hyersnap_Assignment
-    cd chip-autocomplete
     ```
 
 2. **Install dependencies:**
